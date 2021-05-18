@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+ <div class="login">
+	<h2> Crop Type Prediction </h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <h4> Nitrogen </h4>
+    	<input type="number" name="N" placeholder="give values btw:[1-150]" size="80" required="required" />
+    <h4> Phosphorus </h4>	
+        <input type="number" name="P" placeholder="give values btw:[1-150]" size="80" required="required" />
+    <h4> Potassium  </h4>    
+		<input type="number" name="K" placeholder="give values btw:[1-150]" size="80" required="required" />
+	<h4> Temperature </h4>	
+		<input type="number" name="temperature" placeholder="floating values btw:[1-150] like 45.76" size="120" step="any" required="required" />
+	<h4> Humidity </h4>		
+		<input type="number" name="humidity" placeholder="floating values btw:[1-150] like 56.6" size="120" step="any"  required="required" />
+	<h4> Ph </h4>	
+		<input type="number" name="ph" placeholder="floating values btw:[1-150] like 67.34" size="120" step="any" required="required" />
+    <h4> Rainfall </h4>		
+		<input type="number" name="rainfall" placeholder="give floating values btw:[1-150] like 130.3" step="any" size="120" required="required" />	
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ 
+
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            padding: 0px;
+        }
+                  
+    </style>
+    
+</body>
+</html>

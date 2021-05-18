@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+ <div class="login">
+	<h2> Crop Type Prediction </h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <h3> Nitrogen </h3>
+    	<input type="number" name="N" placeholder="enter values between [1-150]" required="required" />
+    <h3> Phosphorus </h3>	
+        <input type="number" name="P" placeholder="enter values between [1-150]"  required="required" />
+    <h3> Potassium </h3>    
+		<input type="number" name="K" placeholder="(enter values between [1-150] )"  required="required" />
+	<h3> Temperature </h3>	
+		<input type="number" name="temperature" placeholder="enter floating values between [1-100] "  step="any" required="required" />
+	<h3> Humidity  </h3>		
+		<input type="number" name="humidity" placeholder="enter floating values between [1-100]"  step="any"  required="required" />
+	<h3> Ph </h3>	
+		<input type="number" name="ph" placeholder="enter floating values between [1-7] "  step="any" required="required" />
+    <h3> Rainfall </h3>		
+		<input type="number" name="rainfall" placeholder="enter floating values between [1-100] " step="any" required="required" />	
+		<br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       
+   
+    </form>
+    
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ 
+
+  <style>
+     body {
+            background-color: powderblue;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        
+    input { 
+	width: 20%; 
+	margin-bottom: 8px; 
+	padding: 8px;
+	font-size: 13px;
+	border-radius: 2px;
+	
+
+                  
+    </style>
+    
+</body>
+</html>
